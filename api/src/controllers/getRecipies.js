@@ -1,5 +1,4 @@
 const axios = require ('axios');
-const {Sequelize} = require('sequelize');
 const { Recipe, TypeDiet } = require('../db');
 const { API_KEY } = process.env;
 

@@ -1,24 +1,24 @@
 const { Router } = require('express');
 const axios = require ('axios');
 const { Recipe, TypeDiet } = require('../db');
-const { getAllRecipes } = require ('../controllers/getRecipies')
+const { getAllRecipes } = require ('../controllers/getRecipies');
 const router = Router();
 
 
 router.get('/', async (req, res) =>{                   
     const { name } = req.query;                                  // Pido el name por query
-    let recipes = await getAllRecipes();
-    if(name){     
-        let filtered = await recipes.filter((el) => 
-        el.createInDb
-        ? el.name.toLowerCase().includes(name.toLocaleLowerCase())
-        : el.title.toLowerCase().includes(name.toLowerCase())
-        );
-        filtered.length
-        ? res.status(200).send(filtered)
-        :res.status(404).send('Sorry! This recipe does not exist')
+    if(name){  
+        try{ 
+            let recipes = await getAllRecipes();
+            let filtered = await recipes.filter((el) => el.name.toLowerCase().includes(name.toLowerCase()));
+            console.log(filtered)
+            res.status(200).send(filtered);
+        }catch(err){
+            res.status(404).send('Sorry! No recipes found');
+        };
     }else{
-        res.send(recipes);
+        const allRecipes = await getAllRecipes();
+        res.status(200).send(recipes);
     };
 });
 
@@ -43,7 +43,7 @@ router.get('/:id', async (req, res) => {
                 let recipesId = await recipesTotal.filter(el => el.id === parseInt(id));
                 recipesId.length ?
                 res.sendStatus(200).json(recipesId) :
-                res.send('Recipe not found');
+                res.send('Sorry! This recipe does not exist');
             };
         }catch(err){
             res.json({message: err})
