@@ -10,31 +10,30 @@ module.exports = (sequelize) => {
       primaryKey: true,
       allowNull: false
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    resume: {
+    summary: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    score: {
+    healthScore: {
       type: DataTypes.INTEGER
     },
-    healthyFoofLevel: {
+    spoonacularScore: {
       type: DataTypes.INTEGER
     },
     img:{
       type: DataTypes.TEXT
     },
-    stepByStep: {
+    analyzedInstructions: {
       type: DataTypes.ARRAY(DataTypes.TEXT)
     },
     createInDb: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
       defaultValue: true
     }
   });
 };
 
-// API Key: 8e4a19927203484c8aeb75b4af288b1e
