@@ -5,7 +5,7 @@ const { Recipe, TypeDiet } = require('../db');
 const router = express.Router();
 
 
-router.post('/recipe', async (req, res) => {
+router.post('/', async (req, res) => {
     let {
         name,                   // Titulo
         summary,                // Resumen del plato
