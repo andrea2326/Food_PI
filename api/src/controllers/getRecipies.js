@@ -14,10 +14,14 @@ const getDataApi = async () => {
             dishTypes: e.dishTypes.map((el) => {return{name:el}}),
             spoonacularScore: e.spoonacularScore,
             img: e.image,
-            analyzedInstructions: e.analyzedInstructions.map(el=> el)
+            analyzedInstructions: e.analyzedInstructions[0]?.steps.map(el => {
+                return{
+                    number: el.number,
+                    stpep: el.step
+                };
+            }),
         };
     });
-    console.log(apiInfo)
     return apiInfo;
 };
 
@@ -34,7 +38,7 @@ const getInfoDb = async () => {
 };
 
 const getAllRecipes = async () => {
-    const inApi = await getInfoDb();
+    const inApi = await getDataApi();
     const inDb = await getInfoDb();
     const allRecipes = [...inApi, ...inDb];
     //console.log(allRecipes)

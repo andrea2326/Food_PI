@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const{ TypeDiet } = require('../db');
 const router = Router();
-const { diets} = require('../controllers/getTypes')
+const { diets} = require('../controllers/getTypes.js')
 
 
 router.get('/type', async (req, res) => {

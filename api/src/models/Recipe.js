@@ -28,7 +28,7 @@ module.exports = (sequelize) => {
       type: DataTypes.TEXT
     },
     analyzedInstructions: {
-      type: DataTypes.ARRAY(DataTypes.TEXT)
+      type: DataTypes.JSON
     },
     createInDb: {
       type: DataTypes.BOOLEAN,
