@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
     let {
-        name,                   // Titulo
+        title,                  // Titulo
         summary,                // Resumen del plato
         spoonacularScore,       // Puntuación
         healthScore,            // Nivel de "comida saludable"
@@ -15,12 +15,12 @@ router.post('/', async (req, res) => {
         createInDb,
         typeDiet
     } = req.body;
-    if(!name || !summary){
+    if(!title || !summary){
         return res.status(404).send('Please, try again entering title and summary')
     }
     try{
         let recipeCreated = await Recipe.create ({
-            name,
+            title,
             summary,
             spoonacularScore,
             healthScore,
@@ -32,8 +32,8 @@ router.post('/', async (req, res) => {
             where: { name: typeDiet }
         });
 
-        recipeCreated.addTypeDiet(typeDietDb)
-        res.send('Your recipe was created successfully!')
+        await recipeCreated.addTypeDiet(typeDietDb)
+        res.send(recipeCreated)
     }catch(err){
         next(err);
     };
