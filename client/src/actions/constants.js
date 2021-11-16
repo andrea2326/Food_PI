@@ -1,0 +1,9 @@
+export const GET_ALL_RECIPES = 'GET_ALL_RECIPES';
+export const GET_TYPE_DIET = 'GET_TYPE_DIET';
+export const GET_RECIPES_BY_NAME = 'GET_RECIPES_BY_NAME';
+export const GET_RECIPES_BY_ID = 'GET_RECIPES_BY_ID';
+export const FILTER_BY_TYPE_DIET = 'FILTER_BY_TYPE_DIET';
+export const ORDER_BY_NAME = 'ORDER_BY_NAME';
+export const ORDER_BY_SCORE = 'ORDER_BY_SCORE';
+export const RECIPE_ID_DETAIL = 'RECIPE_ID_DETAIL';
+export const POST_RECIPE = 'POST_RECIPE';

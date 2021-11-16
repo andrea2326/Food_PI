@@ -1,0 +1,31 @@
+.ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: rgb(3, 4, 8);
+    
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:20%;
+    height: 1.5rem;
+    width: 1.5rem;
+    border: 2px solid #5b5e5eec;
+    margin-bottom: auto;
+    
+}
+.container:hover{
+    transform: scale(1.08);
+    transition: all 0.5s;
+    background-color: rgba(3, 3, 3, 0.719);
+    cursor: pointer;
+    color: #fff;
+}
+
+.number{
+    justify-content: center;
+}
+

@@ -1,0 +1,49 @@
+
+.button {
+    background-color: #4a524a;
+    border-radius: 5px;
+    color: #d8c1c1;
+    padding: 3px 22px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+    
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 #746363e5, 0 6px 20px 0 rgba(109, 104, 104, 0.974);
+    cursor: pointer
+}
+
+.button:hover {
+    background-color: hsla(120, 15%, 77%, 0.904); 
+    color: #594f4f;
+    box-shadow: 0 8px 16px 0 #ece5e5e5, 0 6px 20px 0 rgba(109, 104, 104, 0.974);
+}
+
+.input {
+    border-radius: 5px;
+    background-color: #def;
+    align-items: row;
+    padding: 4px;
+    /* display: grid; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+.input_text{
+    border-radius: 5px;
+    background-color: #def;
+    align-items: row;
+    padding: 4px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    cursor: text;
+}
